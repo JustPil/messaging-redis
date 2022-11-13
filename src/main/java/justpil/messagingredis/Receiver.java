@@ -6,14 +6,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Receiver {
     private static final Logger LOGGER = LoggerFactory.getLogger(Receiver.class);
-    private AtomicInteger counter = new AtomicInteger();
+    private final AtomicInteger COUNTER = new AtomicInteger();
 
     public void receive(String message) {
         LOGGER.info("Received <" + message + ">");
-        counter.incrementAndGet();
+        COUNTER.incrementAndGet();
     }
 
     public int getCount() {
-        return counter.get();
+        return COUNTER.get();
     }
 }
